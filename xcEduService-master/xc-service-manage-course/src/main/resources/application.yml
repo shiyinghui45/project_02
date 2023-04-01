@@ -1,0 +1,42 @@
+server:
+  port: 31200
+spring:
+  application:
+    name: xc-service-manage-course
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/xc_course?characterEncoding=utf-8
+      username: root
+      password: root
+      driverClassName: com.mysql.jdbc.Driver
+      initialSize: 5  #初始建立连接数量
+      minIdle: 5  #最小连接数量
+      maxActive: 20 #最大连接数量
+      maxWait: 10000  #获取连接最大等待时间，毫秒
+      testOnBorrow: true #申请连接时检测连接是否有效
+      testOnReturn: false #归还连接时检测连接是否有效
+      timeBetweenEvictionRunsMillis: 60000 #配置间隔检测连接是否有效的时间（单位是毫秒）
+      minEvictableIdleTimeMillis: 300000
+pagehelper:
+  helper-dialect: mysql
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:50101/eureka/,http://localhost:50102/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    ip-address: 127.0.0.1
+# 设置feign调用超时时间
+ribbon:
+  ConnectTimeout: 10000 # 连接请求
+  ReadTimeout: 20000 # 调用请求
+
+course-publish:
+  siteId: 5e5b6b8aa6a4ac40046c05ee
+  templateId: 5e5a72e4a6a4ac414c52ed7a
+  previewUrl: http://www.xuecheng.com/cms/preview/
+  pageWebPath: /course/detail/
+  pagePhysicalPath: /course/detail/
+  dataUrlPre: http://localhost:31200/course/courseview/
+

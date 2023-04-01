@@ -1,0 +1,16 @@
+{ 
+    "_id" : ObjectId("5e4fcf45392c02403c3fbbcc"), 
+    "_class" : "com.xuecheng.framework.domain.cms.CmsTemplate", 
+    "siteId" : "5a751fab6abb5044e0d19ea1", 
+    "templateName" : "轮播图", 
+    "templateParameter" : "", 
+    "templateFileId" : "5e4e80fc392c02477c5df312"
+}
+{ 
+    "_id" : ObjectId("5e5a72e4a6a4ac414c52ed7a"), 
+    "_class" : "com.xuecheng.framework.domain.cms.CmsTemplate", 
+    "siteId" : "5a751fab6abb5044e0d19ea1", 
+    "templateName" : "课程详情", 
+    "templateParameter" : "courseid", 
+    "templateFileId" : "5e5a727ca6a4ac0f7c7f18fa"
+}
